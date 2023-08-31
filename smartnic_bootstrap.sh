@@ -5,7 +5,7 @@ LOGFILE="/opt/install_log"
 function log () 
 {
   msg=$1
-  d=$(date +"[%H:%m:%S] --")
+  d=$(date +"[%b %d %H:%m:%S] --")
 
   if [ -f "$LOGFILE" ]
   then
@@ -186,7 +186,7 @@ mountpoint -q /dev/hugepages || mount -t hugetlbfs nodev /dev/hugepages
 log "Updatedb..." 
 sudo updatedb
 
-log "\n\n ============ DONE =========== "
+log "============ DONE =========== "
 sudo echo -e "\n\n ============ INSTALLATION FINISHED =========== " |sudo tee -a /etc/motd
 sudo date | sudo tee -a /etc/motd
 
